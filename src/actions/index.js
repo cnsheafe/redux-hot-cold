@@ -13,3 +13,8 @@ export const makeGuess = guess => {
         validGuess: validGuess
     }
 }
+
+export const TOGGLE_INFO = 'TOGGLE_INFO'
+export const toggleInfo = () => ({
+    type: TOGGLE_INFO
+})

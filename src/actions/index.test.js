@@ -1,4 +1,4 @@
-import {resetGame, RESET_GAME, makeGuess, MAKE_GUESS} from './actions'
+import {resetGame, RESET_GAME, makeGuess, MAKE_GUESS} from './index'
 
 describe('resetGame', function() {
     it('should return just the type', function() {

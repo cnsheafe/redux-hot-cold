@@ -1,9 +1,10 @@
-import {RESET_GAME, MAKE_GUESS} from '../actions/actions'
+import {RESET_GAME, MAKE_GUESS, TOGGLE_INFO} from '../actions/index'
 
 const newState = {
     guesses: [],
     feedback: 'Make your guess!',
-    correctAnswer: Math.floor(Math.random()*100)+1
+    correctAnswer: Math.floor(Math.random()*100)+1,
+    showInfo: false
 }
 
 function feedbackHelper(difference) {
@@ -30,7 +31,7 @@ export const gameReducer = (state=newState, action) => {
 
     switch (action.type) {
         case RESET_GAME:
-            return Object.assign({}, newState)
+            return Object.assign({}, newState, {correctAnswer: Math.floor(Math.random()*100)+1})
         case MAKE_GUESS:
             if (!action.validGuess) {
                 return Object.assign({}, state, {feedback: 'Not a valid guess'})
@@ -40,6 +41,8 @@ export const gameReducer = (state=newState, action) => {
                 feedback: feedbackHelper(difference),
                 guesses: [...state.guesses, action.guess]
             })
+        case TOGGLE_INFO:
+            return {...state, showInfo: !state.showInfo}
         default:
             return state
     }

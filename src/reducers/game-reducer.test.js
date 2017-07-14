@@ -1,4 +1,4 @@
-import {resetGame, makeGuess} from '../actions/actions'
+import {resetGame, makeGuess} from '../actions/index'
 import {gameReducer} from './game-reducer'
 
 const oldState = {

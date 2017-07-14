@@ -1,11 +1,11 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import GuessSection from './guess-section'
+import ConnectGuessSection, {GuessSection} from './guess-section'
 import GuessForm from './guess-form/guess-form'
 
-describe('GuessForm', function() {
+describe('GuessSection', function() {
     it('should render', function() {
-        shallow(<GuessForm />)
+        shallow(<GuessSection/>)
     });
 });
