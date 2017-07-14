@@ -6,7 +6,7 @@ export const resetGame = () => ({
 export const MAKE_GUESS = 'MAKE_GUESS'
 export const makeGuess = guess => {
     const mGuess = parseInt(guess, 10)
-    let validGuess = isNaN(mGuess) === false && (mGuess > 0 && mGuess <= 100) ? true:false
+    let validGuess = (isNaN(mGuess) === false) && (mGuess > 0 && mGuess <= 100) ? true:false
     return {
         type: MAKE_GUESS,
         guess: mGuess,
